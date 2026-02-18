@@ -534,3 +534,139 @@ footer .socials-link:focus {
     background-color: #31D0AA;
 }
 
+
+.modal-overlay {
+    background-color: rgba(46, 47, 66, 0.40);
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    <!--#opacity pointer-events:nonetransition: opacity-->
+}
+
+.modal-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal {
+    background-color: #FCFCFC;
+    width: 408px;
+    height: 584px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+    justify-content: center;
+    position: relative;
+}
+
+form {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.form .name:focus,
+.contact_tel:focus,
+.email:focus {
+    border: #4D5AE5;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    font-family: inherit;
+    color: #8E8F99;
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
+    height: 40px;
+}
+
+input,
+textarea,
+button {
+    font-family: inherit;
+    line-height: inherit;
+}
+
+form {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+textarea {
+    resize: none;
+}
+
+form .button {
+    margin-top: 24px;
+    width: 169px;
+    align-self: center;
+}
+
+label input[type="checkbox"]+p {
+    font-size: 12px;
+    color: #8E8F99;
+}
+
+.terms {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.service-form p {
+    color: #2E2F42;
+    font-size: 16px;
+    font-weight: 500;
+    align-self: center;
+}
+
+.modal .cross {
+    fill: #2E2F42;
+    width: 8px;
+    height: 8px;
+}
+
+.cross-border {
+    background-color: #E7E9FC;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; 
+    position: absolute;
+    top: 24px;
+    left: 360px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+form {
+    padding-top: 72px;
+}
+
+.form_field {
+    position: relative;
+    margin-top: 8px;
+}
+
+.form_icon {
+    position: absolute;
+    left: 16px;
+    bottom: 8px;
+    fill: #2E2F42;
+}
+
