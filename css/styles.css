@@ -92,7 +92,7 @@ h2, h3 {
 .button:hover,
 .button:focus {
     background-color: #404BBF;
-    outline: none !important;
+    outline: none;
 }
 
 button {
@@ -548,10 +548,7 @@ footer .socials-link:focus {
     top: 0;
     left: 0;
 
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   
 }
 
 .modal-overlay.is-open {
@@ -586,6 +583,15 @@ footer .socials-link:focus {
 label {
     display: flex;
     flex-direction: column;
+}
+
+.service-form label {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8E8F99;
+    margin-bottom: 4px;
 }
 
 .service-form input {
@@ -639,6 +645,7 @@ textarea {
 .service-form .button {
     width: 169px;
     align-self: center;
+    margin-top: 24px;
 }
 
 label input[type="checkbox"]+p {
@@ -650,7 +657,6 @@ input[type="checkbox"] {
     width: 16px;
     height: 16px;
     margin-top: 16px;
-    margin-bottom: 24px;
 }
 
 .terms {
@@ -672,7 +678,7 @@ input[type="checkbox"] {
     width: 8px;
     height: 8px;
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -701,7 +707,7 @@ input[type="checkbox"] {
 
 .cross-border:hover .cross,
 .cross-border:focus .cross {
-    fill: #f4f4f4;
+    fill: #fff;
 }
 
 .service-form {
@@ -711,6 +717,10 @@ input[type="checkbox"] {
 .form_field {
     position: relative;
     margin-top: 8px;
+}
+
+.service-form p {
+    margin-bottom: 8px;
 }
 
 .form_icon {
@@ -792,8 +802,8 @@ input[type="checkbox"] {
     flex-shrink: 0;
     width: 16px;
     height: 16px;
-    border: 2px solid #8E8F99;
-    border-radius: 4px;
+    border: 1px solid rgba(46, 47, 66, 0.40);
+    border-radius: 2px;
     background-color: transparent;
 
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -878,4 +888,18 @@ input[type="checkbox"] {
     border-radius: 4px;
     color: #FFFFFF;
     border: none;
+}
+
+.subscribe-field::placeholder {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 2;
+    letter-spacing: 0.04em;
+}
+
+.subscribe-button {
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    font-size: 16px;
 }
