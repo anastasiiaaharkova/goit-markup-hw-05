@@ -547,13 +547,16 @@ footer .socials-link:focus {
     top: 0;
     left: 0;
 
-    <!--#opacity pointer-events:nonetransition: opacity-->
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-overlay.is-open {
     opacity: 1;
     pointer-events: auto;
 }
+
 .modal {
     background-color: #FCFCFC;
     width: 408px;
@@ -600,7 +603,7 @@ button {
     line-height: inherit;
 }
 
-form {
+.service-form {
     padding-top: 24px;
     padding-bottom: 24px;
 }
@@ -609,7 +612,7 @@ textarea {
     resize: none;
 }
 
-form .button {
+.service-form .button {
     margin-top: 24px;
     width: 169px;
     align-self: center;
@@ -654,7 +657,7 @@ label input[type="checkbox"]+p {
     border: 1px solid rgba(0, 0, 0, 0.10);
 }
 
-form {
+.service-form {
     padding-top: 72px;
 }
 
@@ -669,4 +672,63 @@ form {
     bottom: 8px;
     fill: #2E2F42;
 }
+
+.subscribe {
+    max-width: 453px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: start;
+}
+
+.subscribe-form {
+    width: 453px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.subscribe-field {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    max-width: 453px;
+}
+
+.subscribe button {
+    width: 165px;
+    padding: 8px 64px 8px 24px;
+    position: relative;
+    display: inline-flex;
+}
+
+.plane {
+    position: absolute;
+    top: 8px;
+    right: 24px;
+    fill: #F4F4FD;
+}
+
+.subscribe input {
+    width: 264px;
+    height: 40px;
+    background-color: #2E2F42;
+    color: #F4F4FD;
+    border-color: #F4F4FD;
+}
+
+.subscribe p {
+    align-self: flex-start;
+}
+
+.subscribe-form p {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+}
+
 
