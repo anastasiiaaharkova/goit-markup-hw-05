@@ -92,6 +92,7 @@ h2, h3 {
 .button:hover,
 .button:focus {
     background-color: #404BBF;
+    outline: none !important;
 }
 
 button {
@@ -547,14 +548,13 @@ footer .socials-link:focus {
     top: 0;
     left: 0;
 
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   
 }
 
 .modal-overlay.is-open {
     opacity: 1;
     pointer-events: auto;
+    visibility: visible;
 }
 
 .modal {
@@ -567,20 +567,17 @@ footer .socials-link:focus {
     border-radius: 4px;
     justify-content: center;
     position: relative;
+    padding: 24px;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.20),
+    0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14);
 }
 
-form {
+.service-form {
     width: 360px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-
-.form .name:focus,
-.contact_tel:focus,
-.email:focus {
-    border: #4D5AE5;
 }
 
 label {
@@ -588,12 +585,36 @@ label {
     flex-direction: column;
 }
 
-input {
+.service-form input {
     font-family: inherit;
     color: #8E8F99;
-    border: 1px solid #8E8F99;
+    border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     height: 40px;
+    padding-left: 38px;
+    width: 100%;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+form.service-form input:focus,
+form.service-form textarea:focus {
+    border-color: #4D5AE5;
+    outline: none;
+}
+
+
+.service-form textarea::placeholder {
+    color: rgba(46, 47, 66, 0.40);
+}
+
+.service-form textarea {
+    padding: 8px 16px;
+    height: 120px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 input,
@@ -605,15 +626,14 @@ button {
 
 .service-form {
     padding-top: 24px;
-    padding-bottom: 24px;
 }
 
 textarea {
     resize: none;
+    width: 100%
 }
 
 .service-form .button {
-    margin-top: 24px;
     width: 169px;
     align-self: center;
 }
@@ -623,11 +643,19 @@ label input[type="checkbox"]+p {
     color: #8E8F99;
 }
 
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
 .terms {
     display: flex;
     flex-direction: row;
     gap: 8px;
 }
+
 
 .service-form p {
     color: #2E2F42;
@@ -640,7 +668,11 @@ label input[type="checkbox"]+p {
     fill: #2E2F42;
     width: 8px;
     height: 8px;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
 
 .cross-border {
     background-color: #E7E9FC;
@@ -655,10 +687,22 @@ label input[type="checkbox"]+p {
     top: 24px;
     left: 360px;
     border: 1px solid rgba(0, 0, 0, 0.10);
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cross-border:hover,
+.cross-border:focus {
+  background-color: #404BBF;
+}
+
+.cross-border:hover .cross,
+.cross-border:focus .cross {
+    fill: #f4f4f4;
 }
 
 .service-form {
-    padding-top: 72px;
+    margin-top: 24px;
 }
 
 .form_field {
@@ -671,6 +715,12 @@ label input[type="checkbox"]+p {
     left: 16px;
     bottom: 8px;
     fill: #2E2F42;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form_field input:focus + svg {
+    fill: #4D5AE5;
 }
 
 .subscribe {
@@ -700,15 +750,16 @@ label input[type="checkbox"]+p {
 
 .subscribe button {
     width: 165px;
-    padding: 8px 64px 8px 24px;
-    position: relative;
+    padding: 8px 24px;
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .plane {
-    position: absolute;
-    top: 8px;
-    right: 24px;
     fill: #F4F4FD;
 }
 
@@ -731,4 +782,97 @@ label input[type="checkbox"]+p {
             letter-spacing: 0.02em;
 }
 
+.tick {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #8E8F99;
+    border-radius: 4px;
+    background-color: transparent;
 
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tick-icon {
+    width: 10px;
+    height: 8px;
+    opacity: 0;
+    fill: #F4F4FD;
+    stroke: #F4F4FD;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tick-icon path {
+    stroke: #F4F4FD;
+    fill: none;
+}
+
+.terms input:checked + .tick {
+    background-color: #4D5AE5;
+    border-color: #4D5AE5;
+}
+
+.terms input:checked + .tick .tick-icon {
+    opacity: 1;
+}
+
+.terms input:focus + .tick {
+    border-color: #4D5AE5;
+    box-shadow: 0 0 0 3px rgba(77, 90, 229, 0.1);
+}
+
+.privacy-policy {
+    color: #8E8F99;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
+
+.terms a {
+    color: #4D5AE5;
+    text-decoration: underline;
+}
+.terms {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+
+.subscribe input {
+    outline: none;
+    padding-left: 16px;
+    border-radius: 4px;
+    
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe input::placeholder {
+    color: #FFFFFF;
+}
+
+.subscribe input:focus {
+    border-color: #31D0AA;
+}
+
+.subscribe button:hover,
+.subscribe button:focus {
+    background-color: #31D0AA;
+}
+
+.subscribe-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    flex-direction: row;
+    background-color: #4D5AE5;
+    border-radius: 4px;
+    color: #FFFFFF;
+    border: none;
+}

@@ -361,60 +361,8 @@
             </div>
         </section>
     </main>
-
-    <div class="modal-overlay">
-        <div class="modal">
-            <div class="cross-border">
-                <svg class="cross" width="8px" height="8px">
-                    <use href="./images/icons.svg#cross"></use>
-                </svg>
-            </div>
-            <form name="order-service" class="service-form" autocomplete>
-                <p>Leave your contacts and we will call you back</p>
-                <div class="form_field">
-                    <svg class="form_icon" width="18px" height="24px">
-                        <use href="./images/icons.svg#person"></use>
-                    </svg>
-                    <label>Name
-                        <input type="text" name="name" />
-                    </label>
-                </div>
-                <div class="form_field">
-                    <svg class="form_icon" width="18px" height="24px">
-                        <use href="./images/icons.svg#phone"></use>
-                    </svg>
-                    <label>
-                        Phone
-                        <input type="tel" name="contact_tel" />
-                    </label>
-                </div>
-                <div class="form_field">
-                    <svg class="form_icon" width="18px" height="24px">
-                        <use href="./images/icons.svg#email"></use>
-                    </svg>
-                    <label>
-                        Email
-                        <input type="email" name="email" />
-                    </label>
-                </div>
-                <div class="form_field">
-                    <label class="comment">
-                        Comment
-                        <textarea rows="4" name="comment" placeholder="Text input"></textarea>
-                    </label>
-                </div>
-                <label class="terms">
-                    <input name="terms_and_services" type="checkbox"></input>
-                    <p>I accept the terms and conditions of the <a href="#">Privacy Policy</a></p>
-                </label>
-
-                <button type="submit" class="button">Send</button>
-
-            </form>
-        </div>
-    </div>
-
     <!-- #endregion main-->
+
     <!-- #region footer-->
     <footer class="footer">
         <div class="container">
@@ -458,21 +406,79 @@
                 </ul>
             </div>
             <div class="subscribe">
-                <form name="subscribe_form" class="subscribe-form" autocomplete>
+                <form name="subscribe_form" class="subscribe-form" autocomplete="on">
                     <p>Subscribe</p>
                     <div class="subscribe-field">
-                        <input type="email" name="email" placeholder="Email" />
-                        <button type="submit" class="button">Subscribe <svg class="plane" width="24" height="24">
+                        <input type="email" name="email" placeholder="E-mail" />
+                        <button type="submit" class="subscribe-button">Subscribe
+                            <svg class="plane" width="24" height="24">
                                 <use href="./images/icons.svg#plane"></use>
                             </svg>
                         </button>
                     </div>
                 </form>
             </div>
-
+        </div>
 
     </footer>
     <!-- #endregion footer-->
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <button class="cross-border">
+                <svg class="cross" width="8px" height="8px">
+                    <use href="./images/icons.svg#cross"></use>
+                </svg>
+            </button>
+            <form name="order-service" class="service-form" autocomplete="on">
+                <p>Leave your contacts and we will call you back</p>
+                <div class="form_field">
+                    <label>Name
+                    </label>
+                    <input type="text" name="name" />
+                    <svg class="form_icon" width="18px" height="24px">
+                        <use href="./images/icons.svg#person"></use>
+                    </svg>
+                </div>
+                <div class="form_field">
+                    <label>
+                        Phone
+                    </label>
+                    <input type="tel" name="contact_tel" />
+                    <svg class="form_icon" width="18px" height="24px">
+                        <use href="./images/icons.svg#phone"></use>
+                    </svg>
+                </div>
+                <div class="form_field">
+                    <label>
+                        Email
+                    </label>
+                    <input type="email" name="email" />
+                    <svg class="form_icon" width="18px" height="24px">
+                        <use href="./images/icons.svg#email"></use>
+                    </svg>
+                </div>
+                <div class="form_field">
+                    <label class="comment">
+                        Comment
+                    </label>
+                    <textarea rows="4" name="comment" placeholder="Text input"></textarea>
+                </div>
+                <label class="terms">
+                    <input name="terms_and_services" type="checkbox" class="visually-hidden" />
+                    <span class="tick">
+                        <svg class="tick-icon" width="10px" height="8px">
+                            <use href="./images/icons.svg#tick"></use>
+                        </svg>
+                    </span>
+                    <span class="privacy-policy">I accept the terms and conditions of the <a href="#">Privacy Policy</a></span>
+                </label>
+
+                <button type="submit" class="button">Send</button>
+
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
